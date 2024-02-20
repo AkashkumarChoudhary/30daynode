@@ -18,7 +18,7 @@ const cacheMiddleware = (req, res, next) => {
     // If response not cached, store the original res.send function
     const originalSend = res.send;
     res.send = (body) => {
-        // Cache the response body
+    
         cache.set(key, body);
 
         // Continue with the original res.send function
